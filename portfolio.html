@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afaf Muhammad's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #b38cd0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 30px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #00f2fe;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00f2fe, 0 0 20px #00f2fe;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 25px;
+        }
+
+        nav ul li a {
+            color: #00f2fe;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px #00f2fe, 0 0 10px #00f2fe;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #00f2fe;
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            font-size: 1.2em;
+            color: #141314;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #00f2fe;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* Box/Card Styling for Sections */
+        .card {
+            background-color: #acc5f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 2em;
+            color: #00f2fe;
+            margin-bottom: 15px;
+        }
+
+        .card p, .card ul {
+            font-size: 1.1em;
+            color: #941fa7;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            text-align: left;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skill-bar {
+            background-color: #16a085;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .skill-bar span {
+            display: block;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* Projects Section - Interactive */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .project-card {
+            background-color: #acc5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 45%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: #00f2fe;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .project-card p {
+            color: #941fa7;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            color: #00f2fe;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Afaf Muhammad</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showPage('welcome')">Welcome</a></li>
+                    <li><a href="#" onclick="showPage('about')">About</a></li>
+                    <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+                    <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+                    <li><a href="#" onclick="showPage('education')">Education</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="welcome" class="page active">
+            <h2>Welcome to My Portfolio!</h2>
+            <p>I'm Afaf Muhammad, a passionate Computer Science student. This is a place where you can explore my projects, skills, and the work I've done in the field of technology and cybersecurity.</p>
+            <p>Feel free to navigate through the sections to learn more about me!</p>
+        </section>
+
+        <section id="about" class="page">
+            <div class="card" style="display: flex; align-items: center; gap: 20px;">
+                <img src="afaf1.jpg" alt="Afaf Muhammad's Profile Picture" 
+                     style="width: 450px; height: 300px; object-fit: cover; 
+                            border-top-left-radius: 30% 50%; 
+                            border-bottom-right-radius: 30% 50%;
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+                <div>
+                    <h3>About Me</h3>
+                    <p>
+                        I am a Computer Science student at Usman Institute of Technology, currently working on a variety of innovative projects in cybersecurity, AI, and software development.  I am an enthusiastic Computer Science student with a strong foundationin programming,algorithms, and
+software development.I demonstrate the ability to learn new technologies quickly and apply theoretical knowledge to practical projects.I have experience in collaborative team environments through academic group project.Passionate about problem-solving, I m eager to contribute to innovative projects in a dynamic tech setting.I am seeking internship opportunities to further develop my skills and gain hands-on experience in the field.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="page">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>SIEM System with AI</h3>
+                    <p>
+                        I am working on a SIEM system that leverages artificial intelligence to detect anomalies, identify patterns, and enhance threat detection. The goal is to develop a solution that can process large-scale security data and provide real-time insights.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Optimized Network Packet Analysis</h3>
+                    <p>
+                        This project focuses on optimizing network packet analysis using Python’s multiprocessing capabilities. The aim is to enable faster analysis of large-scale network traffic data to detect anomalies and potential threats in real-time.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Analysis of Machine Learning Algorithms</h3>
+                    <p>
+                        Evaluated performance of Linear Regression, Random Forest, SVM, and Neural Networks for sales forecasting. Used RMSE and R2 Score for model assessment to determine which algorithm provided the most accurate predictions.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>E-learning Platform</h3>
+                    <p>
+                        Developed an E-learning platform with features like video lectures and downloadable PDFs. Focused on a user-friendly design using HTML, CSS, and JavaScript, providing an interactive learning experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="page">
+            <h2>Skills</h2>
+            <p>Here are some of the key skills I have developed throughout my academic and personal projects:</p>
+            <div class="skills-container">
+                <div class="skill-bar" style="width: 90%;"><span class="html">HTML</span></div>
+                <div class="skill-bar" style="width: 90%;"><span class="css">CSS</span></div>
+                <div class="skill-bar" style="width: 80%;"><span class="python">Python</span></div>
+                <div class="skill-bar" style="width: 75%;"><span class="js">JavaScript</span></div>
+                <div class="skill-bar" style="width: 70%;"><span class="ai">AI & Machine Learning</span></div>
+                <div class="skill-bar" style="width: 65%;"><span class="network">Network Security</span></div>
+                <div class="skill-bar" style="width: 70%;"><span class="cybersecurity">Cybersecurity</span></div>
+            </div>
+        </section>
+
+        <section id="education" class="page">
+            <h2>Education</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>BSCS - Usman Institute of Technology</h3>
+                    <p>
+                        Currently pursuing a Bachelor’s degree in Computer Science, focusing on subjects such as Artificial Intelligence, Cybersecurity, Data Structures, and Network Security.
+                        <br><br>
+                        <strong>Duration:</strong> 2021 - 2025
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3>College - Pakistan International School Jeddah</h3>
+                    <p>
+                        Completed my Pre-University education with a focus on Science subjects. Gained a strong foundation in mathematics, computer science, and general studies.
+                        <br><br>
+                        <strong>Duration:</strong> 2019 - 2021
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> afafhussain4@example.com</p>
+                <p><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/afaf-muhammad-62660425a" target="_blank">linkedin.com/in/afafmuhammad</a></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showPage(page) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+
+            // Show the selected page
+            document.getElementById(page).classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
+
+
